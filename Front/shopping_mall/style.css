@@ -87,6 +87,11 @@ body {
   margin-right: var(--base-space);
 }
 
+.item.invisible {
+  background-color: var(--color-white);
+  display: none;
+}
+
 .item__thumbnail {
   width: var(--size-thumbnail);
   height: var(--size-thumbnail);
