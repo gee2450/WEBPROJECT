@@ -1,14 +1,49 @@
-function button_click() {
+// 종합 세팅
+function Setting() {
+    // json 파일 위치
+    requestURL = '../shopping_mall/data/data.json';
+
+    // http request 생성 후 open
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    // 서버 응답을 기다리고 나머지 처리
+    request.onload = function() {
+        var superHeroes = request.response;
+        displayItems(superHeroes.items);
+        button_click(superHeroes.items);
+    }
+}
+
+// html의 items class 자리에 item 추가
+function displayItems(items) {
+    const items_html = document.querySelector('.items');
+    items.map(item => items_html.innerHTML += createHTMLString(item)).join('');
+}
+  
+// item string을 return
+function createHTMLString(item) {
+    return `
+        <li class="item">
+            <img src="${item.image}" class="item__thumbnail" />
+            <span class="item__description">${item.gender}, ${item.size}</span>
+        </li>
+        `;
+}
+
+function button_click(items) {
     $(".buttons").on('click', function(event) {
         event.preventDefault();
+
         var data_key = $(document.activeElement).attr("data-key");
         var data_value = $(document.activeElement).attr("data-value");
 
-        // HttpCollection type을 Array type으로 변환
-        var items_array = Array.from(document.getElementsByClassName("item"));
+        if (!data_key || !data_value) return;
 
         // 전체 items에서 해당 item 찾아내고 해당되지 않는 item은 비활성화
-        items_array.map(item => {
+        items.map(item => {
             var img_src = item.getElementsByClassName("item__thumbnail")[0].src;
             var img_name = img_src.substr(img_src.lastIndexOf("/")+1);
             var value = img_name.split("_")
@@ -29,5 +64,5 @@ function button_click() {
     })
 }
 
-// main Event
-button_click();
+// main
+Setting();
