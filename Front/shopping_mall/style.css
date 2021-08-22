@@ -1,0 +1,103 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+
+  /* size */
+  --font-size: 18px;
+  --base-space: 8px;
+  --size-border: 4px;
+  --size-button: 60px;
+  --size-thumbnail: 50px;
+
+  /* animation */
+  --animation-duration: 300ms;
+}
+
+body {
+  height: 100vh;
+
+  /* 중간 정렬 방법 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-black);
+}
+
+.logo {
+  cursor: pointer;
+
+  transition: transform 300ms ease;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  margin-right: var(--base-space);
+
+  transition: transform var(--animation-duration) ease;
+}
+
+.colorBtn {
+  font-size: var(--font-size);
+  padding: calc(var(--base-space) * 2);
+  border-radius: var(--size-border);
+}
+
+.btn:hover,
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.clothImg {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.items {
+  width: 60%;
+  height: 60%;
+  list-style: none;
+  padding-left: 0;
+
+  /* scroller 기능 */
+  overflow-y: scroll;
+}
+
+.item {
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: var(--base-space);
+  margin-bottom: var(--base-space);
+  margin-right: var(--base-space);
+}
+
+.item.invisible {
+  background-color: var(--color-white);
+  display: none;
+}
+
+.item__thumbnail {
+  width: var(--size-thumbnail);
+  height: var(--size-thumbnail);
+}
+
+.item__description {
+  margin-left: var(--base-space);
+  font-size: var(--font-size);
+}
