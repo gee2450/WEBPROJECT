@@ -13,7 +13,8 @@ function Setting() {
     request.onload = function() {
         var superHeroes = request.response;
         displayItems(superHeroes.items);
-        button_click(superHeroes.items);
+        logoClick(superHeroes.items);
+        buttonClick(superHeroes.items);
     }
 }
 
@@ -33,7 +34,21 @@ function createHTMLString(item) {
         `;
 }
 
-function button_click(items) {
+function logoClick(items) {
+    $(".logo").on('click', function(event) {
+        event.preventDefault();
+
+        // HttpCollection type을 Array type으로 변환
+        var items_array = Array.from(document.getElementsByClassName("item"));
+
+        // 모두 활성화
+        items_array.map(item => {
+            item.className = "item";
+        });
+    });
+}
+
+function buttonClick(items) {
     $(".buttons").on('click', function(event) {
         event.preventDefault();
 
@@ -42,8 +57,11 @@ function button_click(items) {
 
         if (!data_key || !data_value) return;
 
+        // HttpCollection type을 Array type으로 변환
+        var items_array = Array.from(document.getElementsByClassName("item"));
+
         // 전체 items에서 해당 item 찾아내고 해당되지 않는 item은 비활성화
-        items.map(item => {
+        items_array.map(item => {
             var img_src = item.getElementsByClassName("item__thumbnail")[0].src;
             var img_name = img_src.substr(img_src.lastIndexOf("/")+1);
             var value = img_name.split("_")
