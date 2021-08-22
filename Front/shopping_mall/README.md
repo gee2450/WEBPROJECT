@@ -1,4 +1,4 @@
-이 웹은 node.js를 이용하였습니다. (json을 이용하기 위해)
+# 이 웹은 node.js를 이용하였습니다. (json을 이용하기 위해)
 
 1. node.js install (안 설치하신 분만)(node 홈페이지에서 다운받아주세요
 2. 프로젝트 폴더에서 터미널을 연 후, `npm install -g http-server`를 설치해주세요
