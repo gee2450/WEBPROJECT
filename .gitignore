@@ -9,3 +9,6 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+
+# Front 개발용 ignore
+/Back/
