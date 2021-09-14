@@ -1,117 +1,20 @@
 {
-    "items": [
+    "videos": [
       {
-        "type": "tshirt",
-        "gender": "female",
-        "size": "large",
-        "color": "pink",
-        "image": "./img/pink_t.png"
+        "name": "클론코딩 유튜브 사이트 따라 만들기(HTML+CSS 연습편, 웹 포트폴리오) | 프론트엔드 개발자 입문편: HTML, CSS, Javascrip",
+        "video_url": "",
+        "views": "female",
+        "date": "2020/3/14",
+        "like": 2100,
+        "dislike": 12,
+        "artist": "Dream Coding by Ellie",
+        "isSubscribing": true,
+        "opneSubscribeCount": true,
+        "subscribeCount": 100000
       },
       {
-        "type": "pants",
-        "gender": "male",
-        "size": "small",
-        "color": "blue",
-        "image": "./img/blue_p.png"
-      },
-      {
-        "type": "pants",
-        "gender": "male",
-        "size": "large",
-        "color": "yellow",
-        "image": "./img/yellow_p.png"
-      },
-      {
-        "type": "skirt",
-        "gender": "male",
-        "size": "large",
-        "color": "yellow",
-        "image": "./img/yellow_s.png"
-      },
-      {
-        "type": "skirt",
-        "gender": "female",
-        "size": "small",
-        "color": "blue",
-        "image": "./img/blue_s.png"
-      },
-      {
-        "type": "tshirt",
-        "gender": "male",
-        "size": "large",
-        "color": "blue",
-        "image": "./img/blue_t.png"
-      },
-      {
-        "type": "tshirt",
-        "gender": "male",
-        "size": "large",
-        "color": "yellow",
-        "image": "./img/yellow_t.png"
-      },
-      {
-        "type": "pants",
-        "gender": "female",
-        "size": "small",
-        "color": "pink",
-        "image": "./img/pink_p.png"
-      },
-      {
-        "type": "tshirt",
-        "gender": "female",
-        "size": "large",
-        "color": "pink",
-        "image": "./img/pink_t.png"
-      },
-      {
-        "type": "pants",
-        "gender": "male",
-        "size": "small",
-        "color": "blue",
-        "image": "./img/blue_p.png"
-      },
-      {
-        "type": "pants",
-        "gender": "male",
-        "size": "large",
-        "color": "yellow",
-        "image": "./img/yellow_p.png"
-      },
-      {
-        "type": "skirt",
-        "gender": "male",
-        "size": "large",
-        "color": "yellow",
-        "image": "./img/yellow_s.png"
-      },
-      {
-        "type": "skirt",
-        "gender": "female",
-        "size": "small",
-        "color": "blue",
-        "image": "./img/blue_s.png"
-      },
-      {
-        "type": "tshirt",
-        "gender": "male",
-        "size": "large",
-        "color": "blue",
-        "image": "./img/blue_t.png"
-      },
-      {
-        "type": "tshirt",
-        "gender": "male",
-        "size": "large",
-        "color": "yellow",
-        "image": "./img/yellow_t.png"
-      },
-      {
-        "type": "pants",
-        "gender": "female",
-        "size": "small",
-        "color": "pink",
-        "image": "./img/pink_p.png"
+          
       }
     ]
-  }
+}
   
