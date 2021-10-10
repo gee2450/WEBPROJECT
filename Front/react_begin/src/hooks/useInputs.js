@@ -1,5 +1,6 @@
-import { useState, useReducer, useCallback } from 'react';
-import InputSample from '../InputSample';
+import { useState, useCallback } from 'react';
+// import useReducer from 'react';
+// import InputSample from '../InputSample';
 
 // // useReducer를 이용한 useInputs code
 // // 아직 reducer의 'RESET' 코드를 이해 못함

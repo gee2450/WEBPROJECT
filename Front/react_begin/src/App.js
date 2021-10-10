@@ -1,11 +1,10 @@
-import React, {useRef, useReducer, useMemo, useCallback} from 'react';
+import React, { useReducer, useMemo } from 'react';
 import Hello from './Hello';
 import Wrapper from './Wrapper';
 import Counter from './Counter';
 import InputSample from './InputSample';
 import UserList from './UserList';
 import CreateUser from './CreateUser';
-import useInputs from './hooks/useInputs';
 
 function countActiveUsers(users) {
   console.log('활성 사용자 수를 세는중...');
@@ -63,45 +62,16 @@ function reducer(state, action) {
   }
 }
 
+// const UserDispatch = React.createContext(null);
+// UserDispatch 라는 이름으로 내보내줍니다.
+export const UserDispatch = React.createContext(null);
+// export 하면 나중에 다른 파일에서 import UserDispatch로 불러올 수 있음.
+
 function App() {
-  const [ {username, email}, onChange, reset ] = useInputs({
-    username: '',
-    email: ''
-  });
   const [state, dispatch] = useReducer(reducer, initialState);
-  const nextId = useRef(4);
 
   const { users } = state;
   console.log(state);
-
-  const onCreate = useCallback(() => {
-    dispatch({
-      type: 'CREATE_USER',
-      user: {
-        id: nextId.current,
-        username, 
-        email
-      }
-    });
-    reset();
-    nextId.current += 1;
-  }, [username, email])
-
-  const onRemove = useCallback( id => {
-    // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
-    // = user.id 가 id 인 것을 제거함
-    dispatch({
-      type: 'REMOVE_USER',
-      id
-    });
-  }, [])
-
-  const onToggle = useCallback(id => {
-    dispatch({
-      type: 'TOGGLE_USER',
-      id
-    });
-  }, [])
 
   const count = useMemo(() => countActiveUsers(users), [users]);
   return (
@@ -112,8 +82,10 @@ function App() {
         <Counter /><br/>
         <InputSample />
       </Wrapper>
-      <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate}/>
-      <UserList users={users} onRemove={onRemove} onToggle={onToggle}/>
+      <UserDispatch.Provider value={dispatch}>
+        <CreateUser/>
+        <UserList users={users}/>
+      </UserDispatch.Provider>
       <div>활성사용자 수 : {count}</div>
     </>
   );
